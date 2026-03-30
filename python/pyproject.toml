@@ -1,0 +1,5 @@
+[project]
+name = "data-go-kr-mcp"
+version = "0.1.0"
+description = "공공데이터 포털 MCP 서버 모노레포 (Python)"
+requires-python = ">=3.11"
