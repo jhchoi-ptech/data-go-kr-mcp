@@ -1,0 +1,12 @@
+{
+  "name": "data-go-kr-mcp",
+  "private": true,
+  "workspaces": [
+    "packages/shared",
+    "packages/servers/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "clean": "rm -rf packages/*/dist packages/*/.tsbuildinfo"
+  }
+}
