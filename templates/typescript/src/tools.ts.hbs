@@ -1,0 +1,32 @@
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { z } from "zod";
+import { extractItems } from "@data-go-kr/shared";
+import { {{className}}Client } from "./client.js";
+
+export function registerTools(server: McpServer): void {
+  const client = new {{className}}Client();
+
+  // TODO: 도구를 여기에 정의하세요.
+  // 예시:
+  // server.tool(
+  //   "get_resource_action",
+  //   "도구 설명 (한국어)",
+  //   {
+  //     param1: z.string().describe("파라미터 설명 (한국어)"),
+  //   },
+  //   async (params) => {
+  //     try {
+  //       const response = await client.getData(params);
+  //       const items = extractItems(response.response.body);
+  //       return {
+  //         content: [{ type: "text" as const, text: JSON.stringify(items, null, 2) }],
+  //       };
+  //     } catch (error) {
+  //       return {
+  //         content: [{ type: "text" as const, text: `에러: ${error instanceof Error ? error.message : String(error)}` }],
+  //         isError: true,
+  //       };
+  //     }
+  //   },
+  // );
+}

@@ -1,0 +1,23 @@
+import { DataGoKrClient, type DataGoKrResponse } from "@data-go-kr/shared";
+
+const BASE_URL = "{{baseUrl}}";
+
+export class {{className}}Client extends DataGoKrClient {
+  constructor(serviceKey?: string) {
+    super({ baseUrl: BASE_URL, serviceKey });
+  }
+
+  // TODO: 엔드포인트 메서드를 여기에 구현하세요.
+  // 예시:
+  // async getData(params: {
+  //   param1: string;
+  //   pageNo?: number;
+  //   numOfRows?: number;
+  // }): Promise<DataGoKrResponse<YourType>> {
+  //   return this.fetch<YourType>("endpointName", {
+  //     param1: params.param1,
+  //     pageNo: params.pageNo ?? 1,
+  //     numOfRows: params.numOfRows ?? 10,
+  //   });
+  // }
+}

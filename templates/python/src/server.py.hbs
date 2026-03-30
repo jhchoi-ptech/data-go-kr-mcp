@@ -1,0 +1,55 @@
+"""{{koreanName}} MCP 서버."""
+
+import json
+import sys
+from pathlib import Path
+
+from dotenv import load_dotenv
+from mcp.server.fastmcp import FastMCP
+
+# .env 파일 로드 (서버 디렉토리 → 루트 순서)
+load_dotenv(Path(__file__).parent.parent / ".env")
+load_dotenv(Path(__file__).parent.parent.parent.parent / ".env")
+
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent / "shared" / "src"))
+from data_go_kr_shared import DataGoKrClient, DataGoKrError, extract_items
+
+BASE_URL = "{{baseUrl}}"
+
+mcp = FastMCP("data-go-kr-{{name}}")
+client = DataGoKrClient(base_url=BASE_URL)
+
+
+# TODO: 도구를 여기에 정의하세요.
+# 예시:
+# @mcp.tool()
+# async def get_resource_action(
+#     param1: str,
+#     page_no: int = 1,
+#     num_of_rows: int = 10,
+# ) -> str:
+#     """도구 설명 (한국어).
+#
+#     Args:
+#         param1: 파라미터 설명 (한국어)
+#         page_no: 페이지 번호 (기본값: 1)
+#         num_of_rows: 한 페이지 결과 수 (기본값: 10)
+#     """
+#     try:
+#         response = await client.fetch("endpointName", {
+#             "param1": param1,
+#             "pageNo": page_no,
+#             "numOfRows": num_of_rows,
+#         })
+#         items = extract_items(response["response"]["body"])
+#         return json.dumps(items, ensure_ascii=False, indent=2)
+#     except DataGoKrError as e:
+#         return f"에러: {e}"
+
+
+def main():
+    mcp.run(transport="stdio")
+
+
+if __name__ == "__main__":
+    main()
